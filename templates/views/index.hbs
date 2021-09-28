@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Weather </title>
+    <link rel="icon" href="/img/icon.png" />
+    <link rel="stylesheet" href="/css/style.css" />
+    
+  </head>
+
+  <body>
+    {{!-- stick footer para mapunta sa bootom --}}
+    <div class="main-content">   {{>header}}
+      <p> Use thos site to get your weather</p>
+     
+     {{!-- Search Button --}}
+      <form>
+        
+        <input placeholder="Location">
+        
+        <button>Search</button>
+      </form>
+    {{!-- 2nd in the paragraph will contain error, 1st location 2nd actual forecast --}}
+      <p id="message-1"></p>
+      <p id="message-2"></p>
+    </div>
+ 
+     {{>footer}}
+     <script src="/js/app.js"></script>
+  </body>
+</html>
+
+{{!-- <html>
+  <head>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/js/app.js"></script>
+  </head>
+
+  <body>
+    <h1>{{title}}</h1>
+    <p>Created by {{name}}</p>
+  </body>
+</html> --}}
