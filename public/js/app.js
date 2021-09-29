@@ -22,21 +22,22 @@ weatherForm.addEventListener("submit", (e) => {
   //part ng chalenge
   messageOne.textContent = "loading...";
   messageTwo.textContent = " ";
-  fetch("http://localhost:3000/weather?address=" + location).then(
-    (response) => {
-      response.json().then((data) => {
-        if (data.error) {
-          messageOne.textContent = data.error;
-          //console.log(data.error);
-        } else {
-          messageOne.textContent = data.location;
-          //console.log(data.location);
-          messageTwo.textContent = data.forecast;
-          //console.log(data.forecast);
-        }
-      });
-    }
-  );
+  // remove the url if online
+  //fetch("http://localhost:3000/weather?address=" + location).then(
+  fetch("/weather?address=" + location).then((response) => {
+    //ito na lang
+    response.json().then((data) => {
+      if (data.error) {
+        messageOne.textContent = data.error;
+        //console.log(data.error);
+      } else {
+        messageOne.textContent = data.location;
+        //console.log(data.location);
+        messageTwo.textContent = data.forecast;
+        //console.log(data.forecast);
+      }
+    });
+  });
 });
 
 /*Input value to get weather

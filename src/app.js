@@ -11,6 +11,7 @@ const forecast = require("./utils/forecast");
 // console.log(path.join(__dirname, "../public"));
 // console.log(__filename);//src/app
 const app = express();
+const port = process.env.PORT || 3000; //heroku running online. if file dont exit sa 3000 mapupunta
 
 //Define path for Express Config
 const publicDirectoryPath = path.join(__dirname, "../public");
@@ -217,8 +218,12 @@ template 404(page not found, help article not found)*/
   //gitinore hindi ka makakatract
   //git add filename/
   //git status
-  //git add .
+  //git add . tapos git status ulit //whole files listed changes to be commites
+  //git commit (indicate yung message ano na change. example git commit -m "Init commit")
 });
+
+//running machine locally below code so need magcreate new const sa taas
 app.listen(3000, () => {
-  console.log("Server is up on port 3000"); //node src/app
+  // console.log("Server is up on port 3000"); //node src/app
+  console.log("Server is up on port" + port);
 });
